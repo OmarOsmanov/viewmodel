@@ -1,0 +1,34 @@
+﻿@model Setting
+@{
+    
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="admin" asp-controller="settings" asp-action="create" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Logo" class="form-label">lOGO</label>
+                    <input  class="form-control" asp-for="@Model.Logo">
+                    <span asp-validation-for="@Model.Logo" class=" text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Tittle" class="form-label">tITLE</label>
+                    <input  class="form-control" asp-for="@Model.Tittle">
+                    <span asp-validation-for="@Model.Tittle" class=" text-danger"></span>
+                </div> <div class="mb-3">
+                    <label asp-for="@Model.Subtitle" class="form-label">sUBTITLE</label>
+                    <input  class="form-control" asp-for="@Model.Subtitle">
+                    <span asp-validation-for="@Model.Subtitle" class=" text-danger"></span>
+                </div>
+
+                       <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

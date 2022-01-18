@@ -1,0 +1,45 @@
+﻿@model Product
+
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="admin" asp-controller="product" asp-action="update" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="mb-3">
+
+                    <img src="~/Uploads/@Model.Image" alt="Alternate Text" width="100" />
+                    <label asp-for="@Model.ImageFile" class="form-label">Image</label>
+                    <input class="form-control" asp-for="@Model.ImageFile">
+                    <span asp-validation-for="@Model.ImageFile" class=" text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Name" class="form-label">Name</label>
+                    <input class="form-control" asp-for="@Model.Name">
+                    <span asp-validation-for="@Model.Name" class=" text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Price" class="form-label">Price</label>
+                    <input class="form-control" asp-for="@Model.Price">
+                    <span asp-validation-for="@Model.Price" class=" text-danger"></span>
+                </div>
+
+
+                <input asp-for="@Model.Id" hidden />
+                <input asp-for="@Model.Image" hidden/>
+                @*<input asp-for="@Model.UserId" hidden />*@
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
